@@ -1,24 +1,30 @@
 Source: fs-uae-arcade
 Section: otherosfs
-Priority: extra
-X-Python3-Version: >= 3.2
-Maintainer: Frode Solheim <frode@fs-uae.net>
-Build-Depends: debhelper (>= 9), dh-python, python3-all (>= 3.2), python3-setuptools
-Standards-Version: 3.9.4
-Homepage: http://fs-uae.net/
+Priority: optional
+Maintainer: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.5.1
+Homepage: http://fs-uae.net
+Vcs-Browser: https://salsa.debian.org/debian/fs-uae-arcade
+Vcs-Git: https://salsa.debian.org/debian/fs-uae-arcade.git
 
 Package: fs-uae-arcade
 Architecture: all
-Depends:
- ${python3:Depends},
- ${misc:Depends},
- python3-lhafile,
- python3-opengl,
- python3-pyqt5,
- python3-pyqt5.qtopengl,
- python3-requests,
- python3-setuptools,
- fs-uae
-Recommends: fs-uae-launcher
-Description: Full-screen game browser for FS-UAE.
- FS-UAE Arcade is a full-screen game browser for Amiga/CD32/CDTV games.
+Depends: fs-uae,
+         python3-opengl,
+         python3-pyqt5,
+         python3-pyqt5.qtopengl,
+         python3-setuptools,
+         ${misc:Depends},
+         ${python3:Depends}
+Recommends: fs-uae-launcher, python-lhafile
+Description: Full-screen game browser for FS-UAE
+ FS-UAE is a cross-platform Amiga emulator based on updated emulation code
+ from WinUAE. FS-UAE uses SDL for input, OpenAL for audio and OpenGL
+ for graphics.
+ .
+ This package contains FS-UAE Arcade, a fullscreen game browser
+ for couch potatoes.
